@@ -1,0 +1,57 @@
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "toon-tuna"
+version = "0.1.0"
+description = "Smart TOON/JSON optimizer for LLMs - intelligently chooses the most token-efficient format"
+authors = [
+    {name = "Toon Tuna Contributors"}
+]
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Rust",
+    "Topic :: Software Development :: Libraries",
+]
+dependencies = [
+    "tiktoken>=0.5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-benchmark>=4.0",
+    "pytest-cov>=4.0",
+    "maturin>=1.0",
+    "ruff>=0.1.0",
+]
+
+[project.scripts]
+tuna = "toon_tuna.cli:main"
+toon = "toon_tuna.cli:main"
+
+[tool.maturin]
+python-source = "python"
+module-name = "toon_tuna._toon_tuna"
+features = ["pyo3/extension-module"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py38"

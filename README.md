@@ -289,6 +289,50 @@ result = encode_optimal(config)
 ### Let toon-tuna decide!
 🎯 **Just use `encode_optimal()`** and it will choose for you!
 
+## How does it compare
+Here is some test comparison with https://github.com/xaviviro/python-toon
+
+================================================================================
+SUMMARY
+================================================================================
+
+📈 Average Speedup: 4.30x
+📊 Median Speedup: 3.82x
+⚡ Min Speedup: 1.79x
+🚀 Max Speedup: 9.92x
+
+================================================================================
+DETAILED RESULTS
+================================================================================
+
+Uniform Arrays:
+ size  tuna_mean  pytoon_mean  speedup
+   10   0.100287     0.377292 3.762142
+   50   0.303030     1.213948 4.006027
+  100   0.610044     2.525142 4.139278
+  500   2.910722    10.042790 3.450274
+ 1000   5.461537    34.895762 6.389366
+ 5000  39.104207    69.843162 1.786078
+
+Nested Objects:
+ depth  tuna_mean  pytoon_mean  speedup
+     2   0.021845     0.072209 3.305458
+     3   0.026778     0.099066 3.699598
+     5   0.050893     0.152696 3.000322
+     7   0.085473     0.215637 2.522854
+
+Mixed Data:
+ size  tuna_mean  pytoon_mean  speedup
+   50   0.073073     0.376116 5.147137
+  100   0.133395     1.323156 9.919105
+  500   1.713958     6.643992 3.876404
+ 1000   2.553982    13.331770 5.219995
+
+
+<img width="1490" height="1180" alt="Stats" src="https://github.com/user-attachments/assets/48918c3f-52f8-4ba2-aa85-0f867e0c7178" />
+
+
+
 ## TOON Format Specification
 
 toon-tuna implements [TOON v2.0 spec](https://github.com/toon-format/spec):

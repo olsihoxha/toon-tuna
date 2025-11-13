@@ -271,22 +271,6 @@ result = encode_optimal(config)
 # Savings: 3.2% (minimal difference)
 ```
 
-## Performance Benchmarks
-
-Tested on MacBook Pro M1, Python 3.11:
-
-| Dataset | Size | JSON Tokens | TOON Tokens | Savings | Encoding Speed |
-|---------|------|-------------|-------------|---------|----------------|
-| 100 users (uniform) | 5.2 KB | 1,234 | 678 | **45%** | 0.8ms |
-| 1000 products | 52 KB | 12,345 | 6,789 | **45%** | 7ms |
-| Nested config | 1.2 KB | 234 | 245 | -5% (JSON better) | 0.3ms |
-| Mixed data | 8 KB | 1,500 | 1,480 | **1.3%** | 1.2ms |
-
-**Speed comparison** (encode + count tokens):
-- **toon-tuna (Rust):** 0.8ms for 100 items
-- **Pure Python:** 45ms for 100 items
-- **Speedup:** **56x faster!**
-
 ## When to Use Each Format
 
 ### Use TOON when:

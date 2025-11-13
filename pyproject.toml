@@ -4,7 +4,7 @@ build-backend = "maturin"
 
 [project]
 name = "toon-tuna"
-version = "0.1.0"
+version = "0.1.1"
 description = "Smart TOON/JSON optimizer for LLMs - intelligently chooses the most token-efficient format"
 authors = [
     {name = "Toon Tuna Contributors"}
